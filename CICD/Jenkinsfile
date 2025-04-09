@@ -1,9 +1,11 @@
 pipeline {
     agent any
+
     tools {
-        maven 'Maven_3.9.6'  // Correct Maven version (make sure it's installed in Jenkins)
-        jdk 'JDK_21'         // Correct JDK version (must be configured in Jenkins global tools)
+        maven 'Maven_3.9.6'
+        jdk 'JDK_21'
     }
+
     stages {
         stage('SampleBulidJobs') {
             steps {
@@ -13,8 +15,11 @@ pipeline {
 
         stage('SampleTestJobs') {
             steps {
-                git url: 'https://github.com/rajeshbandaru34/CICD.git', branch: 'main'
-                bat 'mvn clean install'  // Executes your pom.xml
+                echo 'Testing the project...'
+                // Ensure you're in the right directory where pom.xml is
+                bat 'echo Current directory: %cd%'
+                bat 'dir'
+                bat 'mvn clean install'
             }
         }
 
