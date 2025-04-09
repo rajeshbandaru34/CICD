@@ -1,4 +1,4 @@
-package CICD.CICD;
+package CICD123;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
