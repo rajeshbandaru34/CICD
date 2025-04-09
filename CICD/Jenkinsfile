@@ -2,12 +2,12 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven_3.9.6'   // Set this to the Maven name configured in Jenkins
-        jdk 'JDK_21'          // Set this to the JDK name configured in Jenkins
+        maven 'Maven_3.9.6'
+        jdk 'JDK_21'
     }
 
     stages {
-        stage('SampleBulidJobs') {
+        stage('SampleBuildJobs') {
             steps {
                 echo 'Building the project...'
             }
@@ -16,7 +16,9 @@ pipeline {
         stage('SampleTestJobs') {
             steps {
                 git url: 'https://github.com/rajeshbandaru34/CICD.git', branch: 'main'
-                bat 'mvn clean install'
+                dir('CICD') {
+                    bat 'mvn clean install'
+                }
             }
         }
 
@@ -36,14 +38,16 @@ pipeline {
     post {
         always {
             echo 'Pipeline completed.'
-            publishHTML(target: [
-                reportDir: 'test-output',
-                reportFiles: 'index.html',
-                reportName: 'TestNG HTML Report',
-                keepAll: true,
-                alwaysLinkToLastBuild: true,
-                allowMissing: false
-            ])
+            dir('CICD/test-output') {
+                publishHTML(target: [
+                    reportDir: '.',                  // Current dir is test-output
+                    reportFiles: 'index.html',
+                    reportName: 'TestNG HTML Report',
+                    keepAll: true,
+                    alwaysLinkToLastBuild: true,
+                    allowMissing: false
+                ])
+            }
         }
 
         success {
