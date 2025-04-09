@@ -1,17 +1,23 @@
 pipeline {
     agent any
-
+    tools {
+        maven 'Maven_3.9.6'  // Correct Maven version (make sure it's installed in Jenkins)
+        jdk 'JDK_21'         // Correct JDK version (must be configured in Jenkins global tools)
+    }
     stages {
         stage('SampleBulidJobs') {
             steps {
                 echo 'Building the project...'
             }
         }
-		stage('SampleTestJobs') {
+
+        stage('SampleTestJobs') {
             steps {
                 git url: 'https://github.com/rajeshbandaru34/CICD.git', branch: 'main'
+                sh 'mvn clean install'  // Executes your pom.xml
             }
         }
+
         stage('SampleDeployJobs') {
             steps {
                 echo 'Deploying the project...'
@@ -20,8 +26,20 @@ pipeline {
 
         stage('SampleDeliveryJobs') {
             steps {
-                echo 'Deliverying the project...'
+                echo 'Delivering the project...'
             }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline completed.'
+        }
+        success {
+            echo 'Build was successful!'
+        }
+        failure {
+            echo 'Build failed.'
         }
     }
 }
