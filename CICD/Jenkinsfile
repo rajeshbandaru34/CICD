@@ -19,7 +19,7 @@ pipeline {
                 // Ensure you're in the right directory where pom.xml is
                 bat 'echo Current directory: %cd%'
                 bat 'dir'
-                bat 'mvn clean install'
+               //  bat 'mvn clean install'
             }
         }
 
