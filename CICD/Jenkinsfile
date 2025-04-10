@@ -7,7 +7,7 @@ pipeline {
     }
 
     stages {
-        stage('SampleBulidJobs') {
+        stage('SampleBuildJobs') {
             steps {
                 echo 'Building the project...'
             }
@@ -15,11 +15,10 @@ pipeline {
 
         stage('SampleTestJobs') {
             steps {
-                echo 'Testing the project...'
-                // Ensure you're in the right directory where pom.xml is
-                bat 'echo Current directory: %cd%'
-                bat 'dir'
-                bat 'mvn clean install'
+                git url: 'https://github.com/rajeshbandaru34/CICD.git', branch: 'main'
+                dir('CICD') {
+                    bat 'mvn clean install'
+                }
             }
         }
 
@@ -39,10 +38,22 @@ pipeline {
     post {
         always {
             echo 'Pipeline completed.'
+            dir('CICD/test-output') {
+                publishHTML(target: [
+                    reportDir: '.',                  // Current dir is test-output
+                    reportFiles: 'index.html',
+                    reportName: 'TestNG HTML Report',
+                    keepAll: true,
+                    alwaysLinkToLastBuild: true,
+                    allowMissing: false
+                ])
+            }
         }
+
         success {
             echo 'Build was successful!'
         }
+
         failure {
             echo 'Build failed.'
         }
