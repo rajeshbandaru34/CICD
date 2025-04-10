@@ -1,0 +1,13 @@
+{
+  "theme": "Conciergo",
+  "encoding": "utf-8",
+  "protocol": "HTTPS",
+  "timelineEnabled": false,
+  "offlineMode": true,
+  "thumbnailForBase64": false,
+  "documentTitle": "Conciergo QA Server ExtentReports",
+  "reportName": "Conciergo in QA",
+  "timeStampFormat": "MMM dd, yyyy HH:mm:ss a",
+  "js": "",
+  "css": ""
+}
