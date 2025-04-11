@@ -35,34 +35,36 @@ pipeline {
         }
     }
 
-   post {
+  post {
     always {
         echo 'Pipeline completed.'
 
         script {
-            def testReportDir = new File("${env.WORKSPACE}/CICD/ExtentReports/Suite/Test")
-            def latestReport = testReportDir.listFiles()
-                .findAll { it.isFile() && it.name ==~ /\d{4}\.\d{2}\.\d{2}\.\d{2}\.\d{2}\.\d{2}\.html/ }
-                .sort { a, b -> a.name <=> b.name }
-                .last()
+            // Run a shell command to find the latest HTML report file
+            def latestFileName = powershell(
+                script: '''
+                    $folder = "$env:WORKSPACE\\CICD\\ExtentReports\\Suite\\Test"
+                    $latest = Get-ChildItem -Path $folder -Filter "*.html" |
+                              Sort-Object Name |
+                              Select-Object -Last 1
+                    return $latest.Name
+                ''',
+                returnStdout: true
+            ).trim()
 
-            if (latestReport) {
-                echo "Latest report file: ${latestReport.absolutePath}"
+            echo "Latest HTML report file: ${latestFileName}"
 
-                // Pass the latest file name to publishHTML
-                publishHTML(target: [
-                    reportDir: "${testReportDir.absolutePath}",
-                    reportFiles: latestReport.name,
-                    reportName: 'Dynamic Extent HTML Report',
-                    keepAll: true,
-                    alwaysLinkToLastBuild: true,
-                    allowMissing: false
-                ])
-            } else {
-                echo "No report HTML file found in Test folder."
-            }
+            publishHTML(target: [
+                reportDir: 'CICD/ExtentReports/Suite/Test',
+                reportFiles: latestFileName,
+                reportName: 'Dynamic Extent HTML Report',
+                keepAll: true,
+                alwaysLinkToLastBuild: true,
+                allowMissing: false
+            ])
         }
     }
 }
+
 
 }
