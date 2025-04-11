@@ -17,7 +17,7 @@ pipeline {
             steps {
                 git url: 'https://github.com/rajeshbandaru34/CICD.git', branch: 'main'
                 dir('CICD') {
-                    bat 'mvn clean install'
+                     bat "mvn clean install -U"
                 }
             }
         }
