@@ -38,7 +38,7 @@ pipeline {
     post {
         always {
             echo 'Pipeline completed.'
-            dir('CICD/ExtentReports/Suite/Test/20250410_161848.html') {
+            dir('CICD/test-output') {
                 publishHTML(target: [
                     reportDir: '.',                  // Current dir is test-output
                     reportFiles: 'index.html',
