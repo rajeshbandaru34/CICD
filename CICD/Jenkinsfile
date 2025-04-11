@@ -42,7 +42,7 @@ pipeline {
                 publishHTML(target: [
                     reportDir: '.',                  // Current dir is test-output
                     reportFiles: 'index.html',
-                    reportName: 'TestNG HTML Report',
+                    reportName: 'ExtentReports HTML Report',
                     keepAll: true,
                     alwaysLinkToLastBuild: true,
                     allowMissing: false
