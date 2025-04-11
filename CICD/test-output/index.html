@@ -103,7 +103,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="CICD123.TEST" class="method navigator-link" hash-for-method="print">print</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="CICD123.appTest" class="method navigator-link" hash-for-method="testSomething">testSomething</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -121,14 +121,14 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">CICD123.TEST</span>
+              <span class="class-name">CICD123.appTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="print">
-                  </a> <!-- print -->
-                  <span class="method-name">print</span>
+                  <a name="testSomething">
+                  </a> <!-- testSomething -->
+                  <span class="method-name">testSomething</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -147,7 +147,7 @@
   &lt;parameter name=&quot;browserName&quot; value=&quot;chrome&quot;/&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;CICD123.TEST&quot;/&gt;
+      &lt;class name=&quot;CICD123.appTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -189,9 +189,9 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'print')
-data.setCell(0, 2, 'CICD123.TEST')
-data.setCell(0, 3, 2169);
+data.setCell(0, 1, 'testSomething')
+data.setCell(0, 2, 'CICD123.appTest')
+data.setCell(0, 3, 2813);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -222,30 +222,26 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">CICD123.TEST</div> <!-- chronological-class-name -->
-              <div class="configuration-class before">
-                <span class="method-name">setupReport(org.testng.TestRunner@4d266391)</span>
+              <div class="chronological-class-name">CICD123.appTest</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">setupReport</span>
                 <span class="method-start">0 ms</span>
-              </div> <!-- configuration-class before -->
+              </div> <!-- configuration-suite before -->
               <div class="configuration-method before">
-                <span class="method-name">setupBrowser(chrome, org.testng.TestRunner@4d266391, public void CICD123.TEST.print())</span>
-                <span class="method-start">330 ms</span>
+                <span class="method-name">setupBrowser(chrome, public void CICD123.appTest.testSomething(), org.testng.TestRunner@2dd2e270)</span>
+                <span class="method-start">233 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">print</span>
-                <span class="method-start">7080 ms</span>
+                <span class="method-name">testSomething</span>
+                <span class="method-start">1637 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=print status=SUCCESS method=TEST.print()[pri:0, instance:CICD123.TEST@45c7e403] out...)</span>
-                <span class="method-start">9270 ms</span>
+                <span class="method-name">tearDown([TestResult name=testSomething status=SUCCESS method=appTest.testSomething()[pri:0, instance:CICD123...)</span>
+                <span class="method-start">4454 ms</span>
               </div> <!-- configuration-method after -->
-              <div class="configuration-test after">
-                <span class="method-name">closeBrowser</span>
-                <span class="method-start">9348 ms</span>
-              </div> <!-- configuration-test after -->
               <div class="configuration-suite after">
-                <span class="method-name">generateExtentReports</span>
-                <span class="method-start">9385 ms</span>
+                <span class="method-name">flushReport</span>
+                <span class="method-start">4750 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

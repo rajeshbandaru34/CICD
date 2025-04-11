@@ -6,7 +6,7 @@
 
 	<test thread-count="5" name="Test">
 		<classes>
-			<class name="CICD123.TEST"/>
+			<class name="CICD123.appTest"/>
 		</classes>
 	</test> <!-- Test -->
 </suite> <!--
