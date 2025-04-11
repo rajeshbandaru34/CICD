@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-11T15:20:10 IST" name="Suite" finished-at="2025-04-11T15:20:15 IST" duration-ms="4529">
+  <suite started-at="2025-04-11T15:34:11 IST" name="Suite123" finished-at="2025-04-11T15:34:15 IST" duration-ms="3599">
     <groups>
     </groups>
-    <test started-at="2025-04-11T15:20:10 IST" name="Test" finished-at="2025-04-11T15:20:15 IST" duration-ms="4529">
+    <test started-at="2025-04-11T15:34:11 IST" name="test123" finished-at="2025-04-11T15:34:15 IST" duration-ms="3599">
       <class name="CICD123.appTest">
-        <test-method is-config="true" signature="setupReport()[pri:0, instance:CICD123.appTest@55b0dcab]" started-at="2025-04-11T15:20:10 IST" name="setupReport" finished-at="2025-04-11T15:20:10 IST" duration-ms="208" status="PASS">
+        <test-method is-config="true" signature="setupReport()[pri:0, instance:CICD123.appTest@55b0dcab]" started-at="2025-04-11T15:34:11 IST" name="setupReport" finished-at="2025-04-11T15:34:11 IST" duration-ms="220" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupReport -->
-        <test-method is-config="true" signature="setupBrowser(java.lang.String,java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:CICD123.appTest@55b0dcab]" started-at="2025-04-11T15:20:10 IST" name="setupBrowser" finished-at="2025-04-11T15:20:11 IST" duration-ms="1404" status="PASS">
+        <test-method is-config="true" signature="setupBrowser(java.lang.String,java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:CICD123.appTest@55b0dcab]" started-at="2025-04-11T15:34:11 IST" name="setupBrowser" finished-at="2025-04-11T15:34:12 IST" duration-ms="1344" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -25,18 +25,18 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[org.testng.TestRunner@2dd2e270]]>
+                <![CDATA[org.testng.TestRunner@68880c21]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupBrowser -->
-        <test-method signature="testSomething()[pri:0, instance:CICD123.appTest@55b0dcab]" started-at="2025-04-11T15:20:11 IST" name="testSomething" finished-at="2025-04-11T15:20:14 IST" duration-ms="2813" status="PASS">
+        <test-method signature="testSomething()[pri:0, instance:CICD123.appTest@55b0dcab]" started-at="2025-04-11T15:34:12 IST" name="testSomething" finished-at="2025-04-11T15:34:14 IST" duration-ms="1999" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSomething -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:CICD123.appTest@55b0dcab]" started-at="2025-04-11T15:20:14 IST" name="tearDown" finished-at="2025-04-11T15:20:15 IST" duration-ms="282" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:CICD123.appTest@55b0dcab]" started-at="2025-04-11T15:34:14 IST" name="tearDown" finished-at="2025-04-11T15:34:15 IST" duration-ms="220" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -47,11 +47,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="flushReport()[pri:0, instance:CICD123.appTest@55b0dcab]" started-at="2025-04-11T15:20:15 IST" name="flushReport" finished-at="2025-04-11T15:20:15 IST" duration-ms="273" status="PASS">
+        <test-method is-config="true" signature="flushReport()[pri:0, instance:CICD123.appTest@55b0dcab]" started-at="2025-04-11T15:34:15 IST" name="flushReport" finished-at="2025-04-11T15:34:15 IST" duration-ms="294" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- flushReport -->
       </class> <!-- CICD123.appTest -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- test123 -->
+  </suite> <!-- Suite123 -->
 </testng-results>
